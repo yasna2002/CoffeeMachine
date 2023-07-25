@@ -32,13 +32,11 @@ resources = {
 }
 
 
-# TODO : Print report
 def print_report():
     for resource in resources:
         print(f"{resource.capitalize()}: {resources[resource]}")
 
 
-# TODO : Check resources
 def enough_resources(user_input):
     for resource in resources:
         if resource == 'money':
@@ -57,7 +55,6 @@ def enough_resources(user_input):
     return True
 
 
-# TODO : Process coins
 def process_coins(coffee_price, user_input):
     print("Please insert coins.")
     quarters = int(input("How many quarters?: "))
@@ -70,13 +67,11 @@ def process_coins(coffee_price, user_input):
         return False
     else:
         print(f"Here is {round((user_payment - coffee_price), 2)} in change.")
-        resources["money"] += round(user_payment, 2)
-        print(f"Here is your {user_input} Enjoy!")
+        resources["money"] += coffee_price
+        print(f"Here is your {user_input} ☕ Enjoy!")
         return True
-        # TODO : Emojy
 
 
-# TODO : Asking the user "What would you like?"
 while 1:
     user_input = input("What would you like? (espresso/latte/cappuccino): ")
     if user_input == 'espresso':
